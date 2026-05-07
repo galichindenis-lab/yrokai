@@ -5,6 +5,7 @@ import { getOrCreateUser } from "@/lib/session";
 import { getProgressPercent, formatXp } from "@/lib/utils";
 import { Trophy, Flame, ArrowRight } from "lucide-react";
 import ModuleCard from "@/components/dashboard/ModuleCard";
+import LogoutButton from "@/components/auth/LogoutButton";
 
 async function getDashboardData(userId: string) {
   const [path, userProgress, user] = await Promise.all([
@@ -73,6 +74,19 @@ export default async function DashboardPage() {
                 {formatXp(userData?.totalXp ?? 0)}
               </span>
             </div>
+            {userData?.email ? (
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-gray-400 hidden sm:block">{userData.email}</span>
+                <LogoutButton />
+              </div>
+            ) : (
+              <Link
+                href="/auth"
+                className="text-sm bg-violet-600 hover:bg-violet-700 transition-colors px-4 py-2 rounded-lg font-medium"
+              >
+                Войти
+              </Link>
+            )}
           </div>
         </div>
       </nav>
