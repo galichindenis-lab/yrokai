@@ -1,3 +1,4 @@
+﻿export const dynamic = 'force-dynamic'
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
@@ -71,7 +72,7 @@ export async function POST(req: NextRequest) {
         data: {
           userId: user.id,
           title: lesson.title,
-          description: `Завершён проектный урок: ${lesson.title}`,
+          description: `Р—Р°РІРµСЂС€С‘РЅ РїСЂРѕРµРєС‚РЅС‹Р№ СѓСЂРѕРє: ${lesson.title}`,
           content: content.slice(0, 500),
           tool: lesson.module.tool ?? "multi",
           lessonId,
@@ -92,3 +93,4 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json(result);
 }
+
