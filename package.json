@@ -35,7 +35,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.441.0",
-    "next": "14.2.13",
+    "next": "^14.2.35",
     "openai": "^6.37.0",
     "posthog-js": "^1.164.0",
     "react": "^18",
